@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: black;
+	margin: 0;
+	padding: 0;
+}
+#container  {
+  height: 200px;
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+  width: 120%;
+}
+img {
+	width: 1200px;
+	height: 1000px;
+}
+#image {
+	left: 23%;
+	position: absolute;
+	top: 43%;
+	transform: translate(-50%, -50%);
+	z-index: 99;
+}
+#main {
+	box-sizing: border-box;
+	height: 300px;
+	left: 50%;
+	padding: 3em 3em;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+}
+#main::before, #main::after {
+	border: 5px solid transparent;
+	box-sizing: inherit;
+	content: ' ';
+	height: 0;
+	margin-bottom: -30px;
+	margin-top: 30px;
+	position: absolute;
+	width: 0;
+}
+#main::before {
+	left: 0;
+	top: 0;
+}
+#main::after {
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+}
+#main:hover::before, #main:hover::after {
+	height: 100%;
+	width: 100%;
+}
+#main:hover::before {
+	border-right-color: #B71C1C;
+	border-top-color: #B71C1C;
+	transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+#main:hover::after {
+	border-left-color: #F44336;
+	border-bottom-color: #F44336;
+	transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+#main:hover #container #title  {
+  left: 47%;
+}
+#main:hover #container #button  {
+  left: 45%;
+}
+#title  {
+  color: #F44336;
+  font-family: 'Pacifico', cursive;
+  font-size: 35px;
+  left: -28%;
+  margin-bottom: 50px;
+  position: relative;
+  top: 10%;
+  transition: all 1s;
+  z-index: 9;
+}
+#sub-title  {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  margin-left: 90px;
+}
+#button  {
+  border: 2px solid white;
+  border-radius: 35px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  height: 35px;
+  left: 0%;
+  line-height: 35px;
+  position: relative;
+  text-align: center;
+  top: 0%;
+  transition: all 1s;
+  width: 200px;
+}
